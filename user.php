@@ -1,10 +1,20 @@
 <?php 
 include 'connect.php';
 if(isset($_POST['submit'])){
-    $name=$_POST[''];
-    $email=$_POST[''];
-    $mobile=$_POST[''];
-    $password=$_POST[''];
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $mobile=$_POST['mobile'];
+    $password=$_POST['password'];
+
+    $sql="insert into `crud`(name,email,mobile,password)
+    values('$name','$email','$mobile','$password')";
+    $result=mysqli_query($con,$sql);
+    if($result){
+        echo "Data inserted successfully";
+    }else{
+        die(mysqli_error($con));
+
+    }
 }
 
 ?>
@@ -31,7 +41,7 @@ if(isset($_POST['submit'])){
         <form method="post">
             <div class="form-group">
                 <label>Name</label>
-                <input type="email" class="form-control" 
+                <input type="text" class="form-control" 
                 placeholder="Enter your name"
                  name="name" autocomplete="off">
 </div>
@@ -43,19 +53,20 @@ if(isset($_POST['submit'])){
 </div>
 <div class="form-group">
                 <label>Mobile</label>
-                <input type="email" class="form-control" 
+                <input type="text" class="form-control" 
                 placeholder="Enter your mobile number"
                  name="mobile" autocomplete="off">
 </div>
 <div class="form-group">
                 <label>Password</label>
-                <input type="email" class="form-control" 
+                <input type="text" class="form-control" 
                 placeholder="Enter your password"
-                 name="password" autocomplete="off">
+                 name="password" >
 </div>
 
 
-                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                <button type="submit" 
+                class="btn btn-primary" name="submit">Submit</button>
         </form>
     </div>
 
