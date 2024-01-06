@@ -1,7 +1,7 @@
 Complete CRUD Operation project in PHP
 
 
-![Screenshot 2024-01-04 183951](https://github.com/kavinduGunasekara/PHP_CRUD_Operation/assets/137909922/18b96b5c-8582-4716-b698-9b206177b80a)
+
 
 
 
